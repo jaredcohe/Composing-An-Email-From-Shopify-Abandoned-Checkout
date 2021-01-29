@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Composing-An-Email-From-Shopify-Abandoned-Checkout</title>
+    <style type="text/css" media="screen">
+    </style>
+  </head>
+  <body>
+  <br><br>
+  <a href="javascript:
+function draftGenericAbandonedCartEmail() {
+  var email = document.getElementsByClassName('customer-email')[0].innerText;
+  console.log(email);
+  var fullName = document.querySelectorAll('a[data-bind-event-click=&quot;Shopify.OrderSidebarFunnel.clickCustomerUserName()&quot;]')[0].innerText;
+  var regex = /\s.+$/i;
+  var firstName = fullName.replace(regex, '');
+  console.log(firstName);
+  var body = encodeURIComponent('Hey ' + firstName + ', Jared from Threes Brewing here. Hope you don\'t mind me reaching out, but can I answer any questions about your order? Anything we can do to help?\r\rJared');
+  console.log(body);
+  var subject = encodeURIComponent('Can We Help With Your Threes Brewing Order?');
+  console.log(subject);
+  var url = 'https://mail.google.com/mail/u/1/?view=cm&fs=1&to=' + email + '&su=' + subject + '&body=' + body;
+  console.log(url);
+  window.open(url);
+};
+draftGenericAbandonedCartEmail();">draftGenericAbandonedCartEmail</a>
+  </body>
+</html>
